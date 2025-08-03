@@ -49,6 +49,8 @@ body {
   background-image: url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnEzZWx2NHBnaGcxMW85OXYyNTcwZnN1YmJqa2J6d2traTNkZWc3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fyLbfJBuSQYIgaBSyd/giphy.gif);
   background-repeat: no-repeat;
   background-size: cover;
+  /* place-items: center; */
+  padding-top: 10vh;
 }
 * {
   margin: 0;
@@ -58,7 +60,7 @@ body {
 
 .board {
   max-width: 100%;
-  height: 80%;
+  height: 90%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: 20px;
@@ -115,6 +117,5 @@ body {
   right:5px;
 
 }
-
 
 
