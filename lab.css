@@ -1,68 +1,43 @@
-html,
-body {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
+    height: auto;
+  }
 }
 
-#mazeContainer {
-    transition-property: opacity;
-    transition-duration: 1s;
-    transition-timing-function: linear;
-    top: 75px; /* 65px + 10px */
-    opacity: 0;
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.30);
-    margin: auto;
+.border {
+  border: 1px black solid;
+  border-radius: 5px;
 }
 
-#mazeContainer #mazeCanvas {
-    margin: 0;
-    display: block;
-    border: solid 1px black;
+#gradient {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
 }
 
-input,
-select {
-    transition-property: background-color, opacity;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.30);
-    height: 45px;
-    width: 150px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    display: inline-block;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-    appearance: none;
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-input:hover,
-select:hover {
-    background-color: rgba(0, 0, 0, 0.70);
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) {
+  input,
+  select {
+    width: 120px;
+  }
 }
 
-input:active,
-select:active {
-    background-color: black;
-}
-
-input:focus,
-select:focus {
-    outline: none;
-}
-
-.custom-select {
-    display: inline-block;
-}
