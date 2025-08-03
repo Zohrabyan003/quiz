@@ -1,0 +1,68 @@
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#mazeContainer {
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    top: 75px; /* 65px + 10px */
+    opacity: 0;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.30);
+    margin: auto;
+}
+
+#mazeContainer #mazeCanvas {
+    margin: 0;
+    display: block;
+    border: solid 1px black;
+}
+
+input,
+select {
+    transition-property: background-color, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.30);
+    height: 45px;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    appearance: none;
+}
+
+input:hover,
+select:hover {
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+input:active,
+select:active {
+    background-color: black;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+.custom-select {
+    display: inline-block;
+}
