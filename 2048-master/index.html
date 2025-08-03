@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/keyframes.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <title>2048</title>
+    <style>
+        @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+        #home {
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/" id="home"><i class="fa fa-home" aria-hidden="true"></i></a>
+
+    <div class="container">
+        <div class="heading">
+            <h1 class="title">
+                <a href="">2048</a>
+            </h1>
+            <div class="scores-container">
+                <div class="score-container">
+                    <p class="title">SCORE</p>
+                    <P class="score">0</P>
+                    <div class="score-addition">
+                        +4
+                    </div>
+                </div>
+                <div class="best-container">
+                    <p class="title">BEST</p>
+                    <P class="score">66666</P>
+                </div>
+            </div>
+        </div>
+        <div class="game-intro">
+            <a href="" class="restart-btn">New Game</a>
+            <h2 class="subtitle">
+                Play 2048 Game Online
+            </h2>
+            <p class="above-game">
+                Join the numbers and get to the <strong>2048</strong> tile!
+            </p>
+        </div>
+        <div class="game-container">
+            <div class="grid-container">
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+            </div>
+            <div class="tile-container">
+
+            </div>
+            <div class="failure-container pop-container">
+                <p>:(</span></p>
+                <p>FIALURE</p>
+            </div>
+            <div class="winning-container pop-container">
+                <p>:)</p>
+                <p>WINNING</p>
+            </div>
+        </div>
+        <div class="footer">
+            <span>
+                Crafted with by
+                <a href="https://gd4ark.github.io/about/">@4Ark</a>/<a href="https://github.com/gd4Ark/2048">GitHub</a>
+            </span>
+        </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/event.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        let song = new Audio
+        song.src = "https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Happy%20001.mp3"
+        song.volume = 0.3
+        song.loop = true;
+        song.play()
+    </script>
+</body>
+
+</html>
