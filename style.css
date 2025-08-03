@@ -1,3 +1,4 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 .flip-emoji {
   perspective: 1000px;
   cursor: pointer;
@@ -21,8 +22,9 @@
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  border: 1px solid #ccc;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 }
 .flip-emoji-front {
   background-color: #fff;
@@ -34,15 +36,19 @@
 .flip-emoji-back {
   background-color: #ffffff;
   transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
 }
 
 .win .flip-emoji-inner {
   transform: rotateY(180deg) !important;
 }
 body {
-  background: rgb(178, 105, 246);
   height: 100vh;
   padding: 45px;
+  background-image: url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmwyN3B5dnZwYWp5cDczNG12YnZrOHkya3VsaHM0bHpzdDFwbGkyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/o3xQOiMLNgHUaRoRof/giphy.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 * {
   margin: 0;
@@ -76,7 +82,7 @@ body {
 .play_again h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
-  text-shadow: 0px 0px 5px #ffffff;
+  text-shadow: 0px 0px 5px white;
   text-align: center;
 }
 .play_again {
@@ -101,3 +107,10 @@ body {
   }
 }
 
+#home{
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right:5px;
+}

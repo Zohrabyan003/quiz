@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            gap: 20px;
+        }
+        a{
+            text-decoration: none;
+            border: 0;
+            border-radius: 15px;
+            background-color: blueviolet;
+            font-size: 25px;
+            width: 80%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+  box-shadow: 0 0 8px 0px blueviolet;
+
+        }
+    </style>
 </head>
-
 <body>
-
-    <div class="board">
-
-    </div>
-    <div class="play_again">
-        <h1>
-            🎉 Congrats! You win! 🏆🎊
-        </h1>
-        <button onclick="window.location.reload()">Play Again</button>
-    </div>
-    <script src="script.js"></script>
+    <main>
+        <a href="/pages/cats.html">😺</a>
+        <a href="/pages/dogs.html">🐶</a>
+        <a href="/pages/emoji.html">😃 ☺️ 😚</a>
+    </main>
 </body>
-
-
 </html>
