@@ -1,43 +1,214 @@
-    width: 100%;
-    height: auto;
-  }
+
+.container.vertical {
+  top: -45vh;
+  flex-direction: column;
+  width: 100%;
+  height: calc(90vh + 100%);
 }
 
-.border {
-  border: 1px black solid;
-  border-radius: 5px;
+/* Spacers */
+.container::before,
+.container::after {
+  content: "";
 }
 
-#gradient {
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  color: #fff;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
+.container.horizontal::before,
+.container.horizontal::after {
+  max-width: calc(100% - 45vh);
+  min-width: 45vh;
+  height: 100%;
 }
 
-@keyframes Gradient {
+.container.vertical::before,
+.container.vertical::after {
+  width: 100%;
+  max-height: calc(100% - 45vh);
+  min-height: 45vh;
+}
+
+/* Blocks */
+.block {
+  position: relative;
+  visibility: hidden;
+  flex-grow: 1;
+  background-color: currentColor;
+  transform: translateZ(6vh);
+  transform-style: preserve-3d;
+}
+
+.block.horizontal {
+  height: 100%;
+}
+  background: transparent;
+  opacity: 0;
+  pointer-events: none;
+  font-family: "Helvetica", "Roboto", "Segoe UI", "Arial", sans-serif;
+  font-size: 4vh;
+  font-weight: lighter;
+  cursor: pointer;
+  transition: opacity 0.25s;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Keyframes */
+@keyframes opacity {
   0% {
-    background-position: 0% 50%;
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
   }
   50% {
-    background-position: 100% 50%;
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
   }
   100% {
-    background-position: 0% 50%;
+    opacity: 1;
+  }
+}
+@keyframes sky {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(-880vh);
   }
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 400px) {
-  input,
-  select {
-    width: 120px;
+@keyframes width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90vh;
   }
 }
 
+@keyframes height {
+  from {
+    height: 0;
+  }
+  to {
+    height: 90vh;
+  }
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: 90vh;
+  }
+}
+  }
+}
+
+/* Sky: start changing */
+#start:checked ~ .sky > div + div,
+#start:checked ~ .sky > div::before {
+  animation-play-state: running;
+}
+
+/* Sky: stop changing */
+#end:checked ~ .sky > div + div,
+#end:checked ~ .sky > div::before,
+#last:checked ~ .sky > div + div,
+#last:checked ~ .sky > div::before {
+  animation-play-state: paused;
+}
+
+/* Base: start movement */
+#start:checked ~ .base {
+  transform: translateY(200vh) rotateX(45deg) rotateZ(45deg);
+  transition-duration: 60s;
+  transition-timing-function: linear;
+}
+
+/* Base: stop movement */
+#end:checked ~ .base,
+#last:checked ~ .base {
+  transform: translateY(25vh) rotateX(45deg) rotateZ(45deg)
+    scale3d(0.3, 0.3, 0.3);
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Inputs and Last Label: display current */
+#start:checked ~ .base > input,
+input:checked + .container > .block > input,
+input:checked + .container > .block > .last {
+  display: block;
+}
+#start:checked ~ .base > .container > .floating,
+input:checked + .container > .block > .container > .floating {
+  display: block;
+}
+
+/* Floating Blocks: stop movement of current */
+#end:active ~ .base .floating,
+#last:active ~ .base .floating,
+input:active + .container > .floating {
+  animation-play-state: paused;
+}
+
+/* Floating Blocks: stop movement of current then fadeout */
+#end:checked ~ .base .floating,
+#last:checked ~ .base .floating,
+input:checked + .container > .floating {
+  visibility: hidden;
+  color: transparent;
+  transition: color 0.5s, background-color 0.5s, visibility 0s 0.5s;
+  animation-play-state: paused;
+}
+/* Increment Points */
+#last:checked ~ .base .floating,
+input:checked + .container > .floating {
+  counter-increment: points 1;
+}
+
+/* Floating Block Sides: stop sizing of current then fadeout */
+#end:checked ~ .base .floating::before,
+#end:checked ~ .base .floating::after,
+#last:checked ~ .base .floating::before,
+#last:checked ~ .base .floating::after,
+input:checked + .container > .floating::before,
+input:checked + .container > .floating::after {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+  animation-play-state: paused;
+}
+
+/* Blocks: show current  */
+input:checked + .container > .floating + .block,
+#last:checked ~ .base .last + .container > .floating + .block {
+  visibility: visible;
+}
+
+/* Points: show only positive */
+.screen:valid .points {
+  display: block;
+}
+
+/* Points: top reached */
+#last:checked ~ .points::before {
+  opacity: 1;
+}
+
+/* Start Label: hide after started */
+#start:checked ~ .start {
+  pointer-events: none;
+  opacity: 0;
+  animation: none;
+}
+
+/* Restart Button: show on end */
+#end:checked ~ button,
+#last:checked ~ button {
+  pointer-events: auto;
+  opacity: 1;
+}
