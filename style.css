@@ -46,7 +46,7 @@
 body {
   height: 100vh;
   padding: 45px;
-  background-image: url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmwyN3B5dnZwYWp5cDczNG12YnZrOHkya3VsaHM0bHpzdDFwbGkyaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/o3xQOiMLNgHUaRoRof/giphy.gif);
+  background-image: url(https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnEzZWx2NHBnaGcxMW85OXYyNTcwZnN1YmJqa2J6d2traTNkZWc3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fyLbfJBuSQYIgaBSyd/giphy.gif);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -113,4 +113,5 @@ body {
   position: absolute;
   top: 5px;
   right:5px;
+
 }
